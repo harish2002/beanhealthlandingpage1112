@@ -162,6 +162,19 @@ body {
   transform: scale(0.98);
 }
 
+/* Logo Styles */
+.brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-logo-footer {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
 /* Navigation */
 .nav-header {
   position: fixed;
