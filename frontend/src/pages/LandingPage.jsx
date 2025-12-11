@@ -593,15 +593,15 @@ const LandingPage = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                  <span className="body-small">contact@beanhealth.in</span>
+                  <span className="body-small">harish@beanhealth.in</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                  <span className="body-small">+91-XXXX-XXXXXX</span>
+                  <span className="body-small">+91 75581 11310</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                  <span className="body-small">Bangalore, India</span>
+                  <span className="body-small">Coimbatore, India</span>
                 </div>
               </div>
             </div>
