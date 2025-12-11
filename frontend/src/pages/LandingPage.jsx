@@ -560,8 +560,7 @@ const LandingPage = () => {
           <div className="footer-grid">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <HeartPulse className="w-6 h-6" style={{ color: 'var(--accent-primary)' }} />
-                <span className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>BeanHealth Private Limited</span>
+                <img src="/beanhealth-logo.png" alt="BeanHealth Logo" className="brand-logo-footer" />
               </div>
               <p className="body-small mb-4">
                 Transforming chronic kidney care through intelligent patient monitoring and clinical workflow automation.
