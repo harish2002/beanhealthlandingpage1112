@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field, ConfigDict
 from typing import List
 import uuid
 from datetime import datetime, timezone
+from email_service import send_demo_request_notification
 
 
 ROOT_DIR = Path(__file__).parent
