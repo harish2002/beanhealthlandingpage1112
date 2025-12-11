@@ -30,7 +30,8 @@ import {
 } from 'lucide-react';
 import { 
   features, 
-  problemStats, 
+  problemStats,
+  fragmentationIssues,
   comparisonData, 
   workflowSteps 
 } from '../mock';
