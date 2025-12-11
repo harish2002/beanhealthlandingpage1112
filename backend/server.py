@@ -83,6 +83,68 @@ async def get_status_checks():
     
     return status_checks
 
+# Demo Request Endpoints
+@api_router.post("/demo-request")
+async def create_demo_request(input: DemoRequestCreate):
+    try:
+        # Create demo request object
+        demo_dict = input.model_dump()
+        demo_obj = DemoRequest(**demo_dict)
+        
+        # Convert to dict and serialize datetime to ISO string for MongoDB
+        doc = demo_obj.model_dump()
+        doc['createdAt'] = doc['createdAt'].isoformat()
+        doc['updatedAt'] = doc['updatedAt'].isoformat()
+        
+        # Insert into database
+        await db.demo_requests.insert_one(doc)
+        
+        logger.info(f"Demo request created: {demo_obj.email}")
+        
+        return {
+            "success": True,
+            "message": "Demo request submitted successfully",
+            "data": {
+                "id": demo_obj.id,
+                "name": demo_obj.name,
+                "email": demo_obj.email,
+                "lookingFor": demo_obj.lookingFor,
+                "status": demo_obj.status,
+                "createdAt": demo_obj.createdAt
+            }
+        }
+    except Exception as e:
+        logger.error(f"Error creating demo request: {str(e)}")
+        return {
+            "success": False,
+            "message": "Failed to submit demo request"
+        }
+
+@api_router.get("/demo-requests")
+async def get_demo_requests():
+    try:
+        # Exclude MongoDB's _id field from the query results
+        demo_requests = await db.demo_requests.find({}, {"_id": 0}).to_list(1000)
+        
+        # Convert ISO string timestamps back to datetime objects
+        for request in demo_requests:
+            if isinstance(request.get('createdAt'), str):
+                request['createdAt'] = datetime.fromisoformat(request['createdAt'])
+            if isinstance(request.get('updatedAt'), str):
+                request['updatedAt'] = datetime.fromisoformat(request['updatedAt'])
+        
+        return {
+            "success": True,
+            "data": demo_requests,
+            "count": len(demo_requests)
+        }
+    except Exception as e:
+        logger.error(f"Error fetching demo requests: {str(e)}")
+        return {
+            "success": False,
+            "message": "Failed to fetch demo requests"
+        }
+
 # Include the router in the main app
 app.include_router(api_router)
 
