@@ -102,9 +102,21 @@ async def create_demo_request(input: DemoRequestCreate):
         
         logger.info(f"Demo request created: {demo_obj.email}")
         
+        # Send email notification
+        email_sent = send_demo_request_notification(
+            name=demo_obj.name,
+            email=demo_obj.email,
+            looking_for=demo_obj.lookingFor
+        )
+        
+        if email_sent:
+            logger.info(f"Email notification sent for demo request: {demo_obj.email}")
+        else:
+            logger.warning(f"Failed to send email notification for: {demo_obj.email}")
+        
         return {
             "success": True,
-            "message": "Demo request submitted successfully",
+            "message": "Request sent. Will contact soon.",
             "data": {
                 "id": demo_obj.id,
                 "name": demo_obj.name,
