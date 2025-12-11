@@ -36,6 +36,9 @@ import {
 } from '../mock';
 import axios from 'axios';
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
+
 const LandingPage = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
