@@ -54,8 +54,8 @@ const LandingPage = () => {
       const response = await axios.post(`${API}/demo-request`, formData);
       if (response.data.success) {
         toast({
-          title: "Demo Request Submitted!",
-          description: "Our team will contact you within 24 hours.",
+          title: "Request Sent!",
+          description: "Will contact soon.",
         });
         setFormData({ name: '', email: '', lookingFor: '' });
       } else {
