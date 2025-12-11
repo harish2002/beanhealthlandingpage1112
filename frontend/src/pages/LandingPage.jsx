@@ -131,35 +131,44 @@ const LandingPage = () => {
       {/* Problem Section */}
       <section id="problem" className="section-container">
         <div className="container">
-          <h2 className="heading-2 text-center mb-4">The Current Problem in Renal Care</h2>
-          <p className="body-large text-center mb-12" style={{ color: 'var(--text-secondary)' }}>
-            Healthcare providers face critical challenges in managing chronic kidney disease
+          <h2 className="heading-2 text-center mb-4">
+            CKD Care Isn't Broken by Science<br />
+            It's Broken by Fragmentation
+          </h2>
+          <p className="body-large text-center mb-12" style={{ color: 'var(--text-secondary)', maxWidth: '900px', margin: '0 auto 3rem' }}>
+            Every CKD patient lives between silos — lab reports scattered, follow-ups forgotten, and vital trends buried in WhatsApp chats. Doctors prescribe tests that patients forget to take; labs work in isolation; critical warnings get missed until hospitalization.
           </p>
-          <div className="ai-grid">
-            {problemStats.map((stat) => (
+          
+          {/* Problem Flow */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            {problemStats.map((stat, index) => (
               <Card key={stat.id} className="product-card text-center">
                 <CardHeader>
-                  <div className="text-4xl font-bold mb-2" style={{ color: 'var(--accent-text)' }}>
-                    {stat.stat}
+                  <div className="text-3xl font-bold mb-2" style={{ color: 'var(--accent-text)' }}>
+                    {index + 1}
                   </div>
-                  <CardDescription className="body-medium">{stat.description}</CardDescription>
+                  <CardTitle className="product-card-title text-base mb-2">{stat.title}</CardTitle>
+                  <CardDescription className="body-small">{stat.description}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
           </div>
-          <div className="mt-12 space-y-4">
-            <div className="flex items-start gap-3">
-              <X className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#ef4444' }} />
-              <p className="body-medium">Nephrologists lack continuous data between consultations</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <X className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#ef4444' }} />
-              <p className="body-medium">No unified workflow for dialysis, CKD, and transplant follow-ups</p>
-            </div>
-            <div className="flex items-start gap-3">
-              <X className="w-5 h-5 mt-1 flex-shrink-0" style={{ color: '#ef4444' }} />
-              <p className="body-medium">Lab reports and medication changes scattered across multiple platforms</p>
-            </div>
+
+          {/* Specific Issues */}
+          <div className="ai-grid mt-12">
+            {fragmentationIssues.map((item) => (
+              <Card key={item.id} className="product-card">
+                <CardHeader>
+                  <div className="flex items-start gap-3 mb-2">
+                    <AlertCircle className="w-6 h-6 flex-shrink-0" style={{ color: '#ef4444' }} />
+                    <div>
+                      <CardTitle className="product-card-title">{item.issue}</CardTitle>
+                      <CardDescription className="product-card-description mt-2">{item.description}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
