@@ -54,11 +54,12 @@ const LandingPage = () => {
     try {
       const response = await axios.post(`${API}/demo-request`, formData);
       if (response.data.success) {
-        toast({
-          title: "Request Sent!",
-          description: "Will contact soon.",
-        });
+        setIsSubmitted(true);
         setFormData({ name: '', email: '', lookingFor: '' });
+        // Reset after 8 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 8000);
       } else {
         toast({
           title: "Submission Failed",
