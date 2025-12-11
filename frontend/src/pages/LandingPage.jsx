@@ -65,8 +65,7 @@ const LandingPage = () => {
       {/* Navigation Header */}
       <nav className="nav-header">
         <div className="flex items-center gap-2">
-          <HeartPulse className="w-6 h-6" style={{ color: 'var(--accent-primary)' }} />
-          <span className="text-lg font-semibold" style={{ color: 'var(--text-primary)' }}>BeanHealth</span>
+          <img src="/beanhealth-logo.png" alt="BeanHealth Logo" className="brand-logo" />
         </div>
         <div className="hidden md:flex items-center gap-4">
           <a href="#problem" className="nav-link">Problem</a>
