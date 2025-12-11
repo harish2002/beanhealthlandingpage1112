@@ -78,10 +78,14 @@ const LandingPage = () => {
     document.getElementById('demo-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="landing-page">
       {/* Logo Section - Separate and Prominent */}
-      <div className="logo-section">
+      <div className="logo-section" onClick={scrollToTop}>
         <img src="/beanhealth-logo.png" alt="BeanHealth Logo" className="brand-logo-main" />
       </div>
 
