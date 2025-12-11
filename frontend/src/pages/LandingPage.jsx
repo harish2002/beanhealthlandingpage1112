@@ -47,6 +47,7 @@ const LandingPage = () => {
     email: '',
     lookingFor: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
