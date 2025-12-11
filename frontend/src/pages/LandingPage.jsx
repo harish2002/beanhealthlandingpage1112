@@ -44,15 +44,30 @@ const LandingPage = () => {
     lookingFor: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = submitDemoRequest(formData);
-    if (result.success) {
+    try {
+      const response = await axios.post(`${API}/demo-request`, formData);
+      if (response.data.success) {
+        toast({
+          title: "Demo Request Submitted!",
+          description: "Our team will contact you within 24 hours.",
+        });
+        setFormData({ name: '', email: '', lookingFor: '' });
+      } else {
+        toast({
+          title: "Submission Failed",
+          description: "Please try again later.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting demo request:', error);
       toast({
-        title: "Demo Request Submitted!",
-        description: "Our team will contact you within 24 hours.",
+        title: "Error",
+        description: "Failed to submit request. Please try again.",
+        variant: "destructive"
       });
-      setFormData({ name: '', email: '', lookingFor: '' });
     }
   };
 
