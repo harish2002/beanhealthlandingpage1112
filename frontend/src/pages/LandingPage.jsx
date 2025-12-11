@@ -80,18 +80,20 @@ const LandingPage = () => {
 
   return (
     <div className="landing-page">
+      {/* Logo Section - Separate and Prominent */}
+      <div className="logo-section">
+        <img src="/beanhealth-logo.png" alt="BeanHealth Logo" className="brand-logo-main" />
+      </div>
+
       {/* Navigation Header */}
       <nav className="nav-header">
-        <div className="flex items-center gap-2">
-          <img src="/beanhealth-logo.png" alt="BeanHealth Logo" className="brand-logo" />
-        </div>
         <div className="hidden md:flex items-center gap-4">
           <a href="#problem" className="nav-link">Problem</a>
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
           <a href="#demo-section" className="nav-link">Contact</a>
         </div>
-        <Button onClick={scrollToDemo} className="btn-primary">Request Demo</Button>
+        <Button onClick={scrollToDemo} className="btn-primary ml-auto">Request Demo</Button>
       </nav>
 
       {/* Hero Section */}
