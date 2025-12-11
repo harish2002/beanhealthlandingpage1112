@@ -164,10 +164,26 @@ body {
 }
 
 /* Logo Styles */
-.brand-logo {
-  height: 50px;
+.logo-section {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 0.75rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--border-light);
+}
+
+.brand-logo-main {
+  height: 70px;
   width: auto;
   object-fit: contain;
+  display: block;
 }
 
 .brand-logo-footer {
@@ -179,21 +195,22 @@ body {
 /* Navigation */
 .nav-header {
   position: fixed;
-  top: 0;
+  top: 6.5rem;
   left: 0;
   right: 0;
   z-index: 50;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem;
+  justify-content: center;
+  padding: 0.5rem 1.5rem;
   height: 3.5rem;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 0.5px solid var(--border-light);
   border-radius: 9999px;
-  margin: 1.5rem;
+  margin: 0 auto;
+  max-width: 800px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
