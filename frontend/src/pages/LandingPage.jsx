@@ -29,12 +29,12 @@ import {
   MapPin
 } from 'lucide-react';
 import { 
-  submitDemoRequest, 
   features, 
   problemStats, 
   comparisonData, 
   workflowSteps 
 } from '../mock';
+import axios from 'axios';
 
 const LandingPage = () => {
   const { toast } = useToast();
