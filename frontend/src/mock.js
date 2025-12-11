@@ -85,23 +85,41 @@ export const features = [
 export const problemStats = [
   {
     id: 1,
-    stat: "70%",
-    description: "Patients come only during flare-ups; early signs are missed"
+    title: "Prescription",
+    description: "Doctor prescribes test"
   },
   {
     id: 2,
-    stat: "300-500",
-    description: "Follow-up patients manually chased by each transplant coordinator"
+    title: "Disconnect",
+    description: "No automated follow-up"
   },
   {
     id: 3,
-    stat: "0",
-    description: "Unified workflow for dialysis, CKD, and transplant follow-ups"
+    title: "Deterioration",
+    description: "Missed warning signs"
   },
   {
     id: 4,
-    stat: "Scattered",
-    description: "Lab reports, vitals, medication changes across WhatsApp, PDFs, calls"
+    title: "Hospitalization",
+    description: "Crisis intervention too late"
+  }
+];
+
+export const fragmentationIssues = [
+  {
+    id: 1,
+    issue: "Lab Reports Scattered",
+    description: "No centralized record of patient diagnostics"
+  },
+  {
+    id: 2,
+    issue: "Follow-ups Forgotten",
+    description: "Manual reminders miss most patients"
+  },
+  {
+    id: 3,
+    issue: "Vital Trends Buried",
+    description: "Critical patterns hidden in unstructured data"
   }
 ];
 
