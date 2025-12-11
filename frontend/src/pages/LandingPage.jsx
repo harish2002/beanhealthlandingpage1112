@@ -455,28 +455,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="section-container" style={{ background: 'var(--bg-section)' }}>
-        <div className="container">
-          <h2 className="heading-2 text-center mb-12">Trusted by Healthcare Professionals</h2>
-          <div className="ai-grid">
-            {testimonials.map((testimonial) => (
-              <Card key={testimonial.id} className="product-card">
-                <CardContent className="pt-6">
-                  <p className="body-medium mb-4" style={{ fontStyle: 'italic' }}>
-                    "{testimonial.quote}"
-                  </p>
-                  <div>
-                    <p className="font-semibold" style={{ color: 'var(--text-primary)' }}>{testimonial.name}</p>
-                    <p className="body-small">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Deployment Model */}
       <section className="section-container">
         <div className="container">
