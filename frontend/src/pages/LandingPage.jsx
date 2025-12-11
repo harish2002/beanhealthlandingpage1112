@@ -30,7 +30,6 @@ import {
 } from 'lucide-react';
 import { 
   submitDemoRequest, 
-  testimonials, 
   features, 
   problemStats, 
   comparisonData, 
