@@ -542,51 +542,93 @@ const LandingPage = () => {
               Schedule a demo to see how BeanHealth can transform your renal care workflow
             </p>
           </div>
-          <Card className="product-card">
-            <CardContent className="pt-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="body-medium font-medium">Name *</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Dr. John Doe"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    required
-                    className="mt-2"
-                  />
+          
+          {!isSubmitted ? (
+            <Card className="product-card">
+              <CardContent className="pt-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div>
+                    <Label htmlFor="name" className="body-medium font-medium">Name *</Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      placeholder="Dr. John Doe"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required
+                      className="mt-2"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="body-medium font-medium">Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      placeholder="john.doe@hospital.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required
+                      className="mt-2"
+                    />
+                  </div>
+                  <div>
+                    <Label htmlFor="lookingFor" className="body-medium font-medium">What are you looking for? *</Label>
+                    <Textarea
+                      id="lookingFor"
+                      placeholder="Tell us about your hospital/clinic and specific requirements..."
+                      value={formData.lookingFor}
+                      onChange={(e) => setFormData({ ...formData, lookingFor: e.target.value })}
+                      required
+                      className="mt-2"
+                      rows={4}
+                    />
+                  </div>
+                  <Button type="submit" className="btn-primary w-full">
+                    Request Demo
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          ) : (
+            <Card className="product-card success-card">
+              <CardContent className="pt-8 pb-8 text-center">
+                <div className="success-animation mb-6">
+                  <CheckCircle2 className="success-icon" style={{ color: 'var(--accent-text)' }} />
                 </div>
-                <div>
-                  <Label htmlFor="email" className="body-medium font-medium">Email *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="john.doe@hospital.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required
-                    className="mt-2"
-                  />
+                <h3 className="heading-3 mb-4" style={{ color: 'var(--accent-text)' }}>
+                  Request Successfully Sent!
+                </h3>
+                <p className="body-large mb-4" style={{ color: 'var(--text-body)' }}>
+                  Thank you for your interest in BeanHealth.
+                </p>
+                <p className="body-medium mb-6" style={{ color: 'var(--text-secondary)' }}>
+                  Our team will review your request and get back to you within <strong>24 hours</strong> to schedule a personalized demo of our CKD care platform.
+                </p>
+                <div className="success-details" style={{ 
+                  background: 'var(--accent-wash)', 
+                  padding: '1.5rem', 
+                  borderRadius: '8px',
+                  border: '1px solid var(--border-light)'
+                }}>
+                  <p className="body-small mb-2" style={{ color: 'var(--text-secondary)' }}>
+                    In the meantime, feel free to explore our website or reach out directly:
+                  </p>
+                  <div className="flex items-center justify-center gap-2 mt-3">
+                    <Mail className="w-4 h-4" style={{ color: 'var(--accent-text)' }} />
+                    <a href="mailto:harish@beanhealth.in" className="link-text body-medium">
+                      harish@beanhealth.in
+                    </a>
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mt-2">
+                    <Phone className="w-4 h-4" style={{ color: 'var(--accent-text)' }} />
+                    <a href="tel:+917558111310" className="link-text body-medium">
+                      +91 75581 11310
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <Label htmlFor="lookingFor" className="body-medium font-medium">What are you looking for? *</Label>
-                  <Textarea
-                    id="lookingFor"
-                    placeholder="Tell us about your hospital/clinic and specific requirements..."
-                    value={formData.lookingFor}
-                    onChange={(e) => setFormData({ ...formData, lookingFor: e.target.value })}
-                    required
-                    className="mt-2"
-                    rows={4}
-                  />
-                </div>
-                <Button type="submit" className="btn-primary w-full">
-                  Request Demo
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </section>
 
