@@ -2,31 +2,32 @@
   /* Backgrounds - Clean & Minimal */
   --bg-page: #FFFFFF;
   --bg-card: #FFFFFF;
-  --bg-section: rgba(0, 0, 0, 0.02);
+  --bg-section: rgba(27, 67, 50, 0.03);
   
-  /* Text - Professional Hierarchy */
-  --text-primary: rgb(0, 55, 32);
-  --text-body: rgb(14, 15, 12);
-  --text-secondary: rgb(131, 146, 140);
-  --text-muted: rgb(175, 183, 180);
+  /* Text - Professional Hierarchy - Maroon & Green from Logo */
+  --text-primary: #3C1518;
+  --text-body: #2d1012;
+  --text-secondary: #69645E;
+  --text-muted: #9B978F;
   
   /* Borders - Subtle Separation */
-  --border-light: rgba(0, 0, 0, 0.1);
-  --border-medium: rgba(0, 0, 0, 0.2);
-  --border-strong: rgba(0, 0, 0, 0.3);
+  --border-light: rgba(27, 67, 50, 0.15);
+  --border-medium: rgba(27, 67, 50, 0.25);
+  --border-strong: rgba(27, 67, 50, 0.35);
   
-  /* BRAND COLORS - Green Accent System */
-  --accent-primary: #8FEC78;
-  --accent-strong: #81DD67;
-  --accent-text: rgb(13, 121, 22);
-  --accent-wash: rgba(148, 242, 127, 0.1);
+  /* BRAND COLORS - Green & Maroon from Logo */
+  --accent-primary: #1B4332;
+  --accent-strong: #2D6A4F;
+  --accent-text: #1B4332;
+  --accent-maroon: #3C1518;
+  --accent-wash: rgba(27, 67, 50, 0.08);
 
-  /* Hero Gradients */
-  --gradient-hero: radial-gradient(at 53% 78%, hsla(60,100%,50%,0.3) 0px, transparent 50%), 
-                   radial-gradient(at 71% 91%, hsla(108,100%,50%,0.3) 0px, transparent 50%), 
-                   radial-gradient(at 31% 91%, hsla(30,100%,50%,0.17) 0px, transparent 50%);
+  /* Hero Gradients - Logo inspired */
+  --gradient-hero: radial-gradient(at 53% 78%, hsla(150, 45%, 75%, 0.15) 0px, transparent 50%), 
+                   radial-gradient(at 71% 91%, hsla(150, 45%, 35%, 0.12) 0px, transparent 50%), 
+                   radial-gradient(at 31% 91%, hsla(0, 45%, 25%, 0.08) 0px, transparent 50%);
   
-  /* Button Gradients */
+  /* Button Gradients - Green from logo */
   --gradient-button: linear-gradient(to bottom right, var(--accent-primary), var(--accent-strong));
 }
 
