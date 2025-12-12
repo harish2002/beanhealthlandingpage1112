@@ -26,7 +26,8 @@ import {
   ArrowRight,
   Phone,
   Mail,
-  MapPin
+  MapPin,
+  Linkedin
 } from 'lucide-react';
 import { 
   features, 
@@ -351,6 +352,78 @@ const LandingPage = () => {
                 </CardHeader>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="section-container" style={{ background: 'var(--bg-section)' }}>
+        <div className="container">
+          <h2 className="heading-2 text-center mb-12">Meet Our Founder</h2>
+          <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
+            {/* Founder Image - Left Side */}
+            <div className="flex-shrink-0">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/y5nca439_image.png" 
+                alt="Harish S, Founder & CEO" 
+                className="rounded-full object-cover"
+                style={{ width: '180px', height: '180px' }}
+              />
+            </div>
+            
+            {/* Founder Description - Right Side */}
+            <div className="flex-1">
+              <h3 className="heading-3 mb-2">Harish S</h3>
+              <p className="text-lg mb-4" style={{ color: 'var(--accent-text)', fontWeight: '600' }}>
+                Founder & CEO of BeanHealth
+              </p>
+              <p className="body-medium mb-6" style={{ color: 'var(--text-secondary)', lineHeight: '1.7' }}>
+                Leading the architecture and development of a connected healthtech platform for continuous, data-driven management of chronic diseases.
+                Building the end-to-end system stack for the next generation Telemedicine — biosensor/device integration, physiological data pipelines, analytics engines, and clinical decision layers — while driving Product, Technology, and Business strategy to translate the solution into a scalable chronic-care infrastructure.
+              </p>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="tel:+917558111310" 
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
+                  style={{ 
+                    background: 'var(--primary-gradient)', 
+                    color: 'white'
+                  }}
+                >
+                  <Phone className="w-5 h-5" />
+                  <span>+91 7558111310</span>
+                </a>
+                
+                <a 
+                  href="mailto:harish@beanhealth.in" 
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
+                  style={{ 
+                    background: 'var(--card-bg)', 
+                    color: 'var(--primary-maroon)',
+                    border: '2px solid var(--primary-maroon)'
+                  }}
+                >
+                  <Mail className="w-5 h-5" />
+                  <span>harish@beanhealth.in</span>
+                </a>
+                
+                <a 
+                  href="https://www.linkedin.com/in/harish-s-espresso/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
+                  style={{ 
+                    background: '#0077B5', 
+                    color: 'white'
+                  }}
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
