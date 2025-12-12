@@ -240,6 +240,18 @@ frontend:
           agent: "testing"
           comment: "✅ All button functionality verified: Email button correctly links to mailto:harish@beanhealth.in, LinkedIn button correctly links to https://www.linkedin.com/in/harish-s-espresso/ and opens in new tab (target='_blank'). Both buttons working as expected."
 
+  - task: "Enlarged Dashboard Image Verification"
+    implemented: true
+    working: true
+    file: "/app/frontend/src/pages/LandingPage.jsx"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+        - working: true
+          agent: "testing"
+          comment: "✅ ENLARGED DASHBOARD IMAGE VERIFIED: Max-width successfully increased to 1600px (from 1152px) via inline style. Reduced padding (px-2 sm:px-4) applied correctly. Image dimensions: Desktop 1120px x 630px (58.3% screen coverage), Mobile 279px x 157px, Tablet 640px x 360px. Image is prominent and takes up more screen space as intended. Quality maintained without pixelation (scale factor 0.58). Transparent background integrates perfectly. Proper spacing with sections maintained (64px below image). All responsive behavior verified across 4 viewport sizes (375px, 768px, 1920px, 2560px). Screenshots captured for documentation."
+
 metadata:
   created_by: "testing_agent"
   version: "1.2"
