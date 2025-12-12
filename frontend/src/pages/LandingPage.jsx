@@ -356,12 +356,12 @@ const LandingPage = () => {
           </div>
           
           {/* Dashboard Mockup Image */}
-          <div className="mt-16 flex justify-center">
+          <div className="mt-16 flex justify-center px-4 sm:px-6 lg:px-8">
             <img 
-              src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/tsjk6sjo_Monitor%20vitals2.png" 
+              src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/jzyz1n2n_Monitor%20vitals3%20trassparent.png" 
               alt="BeanHealth Dashboard - Monitor vitals, message doctors, and manage chronic kidney disease" 
-              className="w-full max-w-5xl rounded-lg shadow-2xl"
-              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
+              className="w-full max-w-6xl h-auto object-contain"
+              style={{ maxHeight: '800px' }}
             />
           </div>
         </div>
