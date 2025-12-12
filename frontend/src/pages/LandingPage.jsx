@@ -354,6 +354,16 @@ const LandingPage = () => {
               </Card>
             ))}
           </div>
+          
+          {/* Dashboard Mockup Image */}
+          <div className="mt-16 flex justify-center">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/tsjk6sjo_Monitor%20vitals2.png" 
+              alt="BeanHealth Dashboard - Monitor vitals, message doctors, and manage chronic kidney disease" 
+              className="w-full max-w-5xl rounded-lg shadow-2xl"
+              style={{ boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15)' }}
+            />
+          </div>
         </div>
       </section>
 
@@ -418,7 +428,7 @@ const LandingPage = () => {
       </section>
 
       {/* Value Proposition */}
-      <section className="section-container" style={{ background: 'var(--bg-section)' }}>
+      <section className="section-container">
         <div className="container">
           <h2 className="heading-2 text-center mb-12">Value for Everyone</h2>
           <div className="grid md:grid-cols-2 gap-8">
