@@ -99,6 +99,7 @@ const LandingPage = () => {
           <a href="#problem" className="nav-link">Problem</a>
           <a href="#solution" className="nav-link">Solution</a>
           <a href="#features" className="nav-link">Features</a>
+          <a href="#founder" className="nav-link">Founder</a>
           <a href="#demo-section" className="nav-link">Contact</a>
         </div>
         <Button onClick={scrollToDemo} className="btn-primary ml-auto">Request Demo</Button>
@@ -357,17 +358,17 @@ const LandingPage = () => {
       </section>
 
       {/* Founder Section */}
-      <section className="section-container" style={{ background: 'var(--bg-section)' }}>
+      <section id="founder" className="section-container" style={{ background: 'var(--bg-section)' }}>
         <div className="container">
           <h2 className="heading-2 text-center mb-12">Meet Our Founder</h2>
-          <div className="flex flex-col md:flex-row items-center gap-8 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-start gap-8 max-w-5xl mx-auto">
             {/* Founder Image - Left Side */}
             <div className="flex-shrink-0">
               <img 
                 src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/y5nca439_image.png" 
                 alt="Harish S, Founder & CEO" 
-                className="rounded-full object-cover"
-                style={{ width: '180px', height: '180px' }}
+                className="object-cover"
+                style={{ width: '280px', height: 'auto' }}
               />
             </div>
             
@@ -382,27 +383,15 @@ const LandingPage = () => {
                 Building the end-to-end system stack for the next generation Telemedicine — biosensor/device integration, physiological data pipelines, analytics engines, and clinical decision layers — while driving Product, Technology, and Business strategy to translate the solution into a scalable chronic-care infrastructure.
               </p>
               
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4">
-                <a 
-                  href="tel:+917558111310" 
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
-                  style={{ 
-                    background: 'var(--primary-gradient)', 
-                    color: 'white'
-                  }}
-                >
-                  <Phone className="w-5 h-5" />
-                  <span>+91 7558111310</span>
-                </a>
-                
+              {/* CTA Buttons - Left Aligned */}
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a 
                   href="mailto:harish@beanhealth.in" 
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all hover:scale-105"
                   style={{ 
                     background: 'var(--card-bg)', 
-                    color: 'var(--primary-maroon)',
-                    border: '2px solid var(--primary-maroon)'
+                    color: 'var(--accent-text)',
+                    border: '2px solid var(--accent-text)'
                   }}
                 >
                   <Mail className="w-5 h-5" />
