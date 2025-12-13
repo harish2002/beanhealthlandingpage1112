@@ -436,7 +436,7 @@ body {
   }
 }
 
-/* Hero Section */
+/* Hero Section - Mobile-First Responsive */
 .hero-section {
   background: var(--gradient-hero);
   min-height: 100vh;
@@ -445,43 +445,85 @@ body {
   justify-content: center;
   position: relative;
   text-align: center;
-  padding: 8rem 1.5rem 3rem;
+  padding: 7rem 1rem 3rem;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 8rem 2rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    padding: 9rem 3rem 5rem;
+  }
 }
 
 .hero-content {
   max-width: 900px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .hero-title {
-  font-family: system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 700;
-  font-size: clamp(2.25rem, 5vw, 4.5rem);
-  line-height: 0.9;
+  font-size: 1.875rem;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 2.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
 }
 
 .hero-subtitle {
-  font-family: system-ui, sans-serif;
-  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
-  line-height: 1.5;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
 }
 
 .dashboard-mockup {
   width: 100%;
   max-width: 800px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .dashboard-mockup {
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
 }
 
 .dashboard-mockup:hover {
   transform: translateY(-4px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
 }
 
 /* Cards */
