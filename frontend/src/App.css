@@ -847,89 +847,58 @@ body {
   text-underline-offset: 3px;
 }
 
-/* Responsive */
+/* Enhanced Mobile Responsiveness */
 @media (max-width: 767px) {
-  .logo-section {
-    top: 0.75rem;
-    left: 1rem;
-  }
-
-  .brand-logo-main {
-    height: 60px;
-  }
-
-  .nav-header {
-    top: 0.75rem;
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 2rem);
-    max-width: 400px;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0.5rem 1rem;
-    margin-top: 5rem;
-  }
-
-  .hero-section {
-    padding: 10rem 1rem 3rem;
-    min-height: 80vh;
-  }
-
-  .ai-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 1rem;
-  }
-
-  .comparison-grid {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-
-  .comparison-row > div,
-  .comparison-header > div {
-    padding: 0.75rem;
-  }
-
-  .workflow-container {
-    grid-template-columns: 1fr;
-  }
-
-  .workflow-arrow {
-    display: none;
+  body {
+    font-size: 14px;
   }
 
   .btn-primary,
   .btn-secondary {
     width: 100%;
-    min-height: 52px;
   }
 
-  .section-container {
-    padding: 3rem 1rem;
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  /* Touch-friendly spacing */
+  .product-card {
+    min-height: 120px;
+  }
+
+  /* Mobile-optimized grids */
+  .grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
+@media (max-width: 640px) {
+  /* Small mobile adjustments */
+  .hero-title br {
+    display: none;
+  }
+}
+
+/* Tablet Optimization */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .ai-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  .container {
+    max-width: 100%;
   }
 }
 
+/* Desktop Enhancements */
 @media (min-width: 1024px) {
-  .ai-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem 2rem;
+  /* Hover effects only on desktop */
+  .product-card:hover {
+    transform: translateY(-6px);
   }
 
-  .product-card:hover {
-    transform: translateY(-4px);
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: translateY(-2px);
   }
 }
 
