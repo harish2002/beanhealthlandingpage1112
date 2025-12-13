@@ -436,6 +436,15 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Hero Section - Mobile-First Responsive */
 .hero-section {
   background: var(--gradient-hero);
