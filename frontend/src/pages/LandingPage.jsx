@@ -105,6 +105,7 @@ const LandingPage = () => {
 
       {/* Navigation Header */}
       <nav className="nav-header">
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-4">
           <a href="#problem" className="nav-link">Problem</a>
           <a href="#solution" className="nav-link">Solution</a>
@@ -112,8 +113,44 @@ const LandingPage = () => {
           <a href="#founder" className="nav-link">Founder</a>
           <a href="#demo-section" className="nav-link">Contact</a>
         </div>
+
+        {/* Mobile Hamburger Button */}
+        <button 
+          className="mobile-menu-button md:hidden"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+
         <Button onClick={scrollToDemo} className="btn-primary ml-auto">Request Demo</Button>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay" onClick={closeMobileMenu}>
+          <div className="mobile-menu-content" onClick={(e) => e.stopPropagation()}>
+            <div className="mobile-menu-header">
+              <img src="/beanhealth-logo.png" alt="BeanHealth" className="mobile-menu-logo" />
+              <button onClick={closeMobileMenu} className="mobile-menu-close">
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+            <div className="mobile-menu-links">
+              <a href="#problem" className="mobile-menu-link" onClick={closeMobileMenu}>Problem</a>
+              <a href="#solution" className="mobile-menu-link" onClick={closeMobileMenu}>Solution</a>
+              <a href="#features" className="mobile-menu-link" onClick={closeMobileMenu}>Features</a>
+              <a href="#founder" className="mobile-menu-link" onClick={closeMobileMenu}>Founder</a>
+              <a href="#demo-section" className="mobile-menu-link" onClick={closeMobileMenu}>Contact</a>
+            </div>
+            <div className="mobile-menu-footer">
+              <Button onClick={() => { scrollToDemo(); closeMobileMenu(); }} className="btn-primary w-full">
+                Request Demo
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="hero-section">
