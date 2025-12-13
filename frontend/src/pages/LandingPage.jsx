@@ -27,7 +27,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  Linkedin
+  Linkedin,
+  Menu
 } from 'lucide-react';
 import { 
   features, 
