@@ -646,13 +646,20 @@ body {
   }
 }
 
-/* Comparison Table */
+/* Comparison Table - Mobile-Responsive */
 .comparison-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .comparison-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+  }
 }
 
 .comparison-header {
@@ -661,10 +668,19 @@ body {
 }
 
 .comparison-header > div {
-  padding: 1rem;
+  padding: 0.75rem;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: 8px;
+  font-family: 'Poppins', system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-header > div {
+    padding: 1rem;
+    font-size: 1rem;
+  }
 }
 
 .comparison-row {
@@ -672,12 +688,20 @@ body {
 }
 
 .comparison-row > div {
-  padding: 1rem;
+  padding: 0.75rem;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
   border-radius: 8px;
   display: flex;
   align-items: center;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .comparison-row > div {
+    padding: 1rem;
+  }
 }
 
 /* Workflow Steps */
