@@ -45,63 +45,113 @@ body {
   color: var(--text-body);
 }
 
-/* Typography */
+/* Typography - Responsive Design System */
 .heading-1 {
-  font-family: system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 700;
-  font-size: clamp(2.25rem, 5vw, 4.5rem);
-  line-height: 0.9;
+  font-size: 2rem;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   color: var(--text-primary);
 }
 
+@media (min-width: 768px) {
+  .heading-1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-1 {
+    font-size: 3rem;
+  }
+}
+
 .heading-2 {
-  font-family: system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.875rem, 4vw, 3rem);
-  line-height: 0.95;
+  font-size: 1.5rem;
+  line-height: 1.2;
   letter-spacing: -0.015em;
   color: var(--text-primary);
 }
 
+@media (min-width: 768px) {
+  .heading-2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-2 {
+    font-size: 2.25rem;
+  }
+}
+
 .heading-3 {
-  font-family: system-ui, sans-serif;
+  font-family: 'Poppins', system-ui, sans-serif;
   font-weight: 600;
-  font-size: clamp(1.25rem, 3vw, 1.5rem);
-  line-height: 1.2;
+  font-size: 1.25rem;
+  line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
 
+@media (min-width: 768px) {
+  .heading-3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-3 {
+    font-size: 1.75rem;
+  }
+}
+
 .body-large {
-  font-family: system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--text-body);
 }
 
+@media (min-width: 768px) {
+  .body-large {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+}
+
 .body-medium {
-  font-family: system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, sans-serif;
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: 0.875rem;
   line-height: 1.5;
   color: var(--text-body);
 }
 
+@media (min-width: 768px) {
+  .body-medium {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
 .body-small {
-  font-family: system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
-  line-height: 1.4;
+  line-height: 1.5;
   color: var(--text-secondary);
 }
 
 .caption {
-  font-family: system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, sans-serif;
   font-weight: 400;
   font-size: 0.75rem;
-  line-height: 1.3;
+  line-height: 1.4;
   color: var(--text-muted);
 }
 
