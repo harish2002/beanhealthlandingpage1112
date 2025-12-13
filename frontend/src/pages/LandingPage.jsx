@@ -50,6 +50,7 @@ const LandingPage = () => {
     lookingFor: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
