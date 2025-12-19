@@ -407,7 +407,7 @@ const LandingPage = () => {
             <img 
               src="https://customer-assets.emergentagent.com/job_med-dashboard-demo/artifacts/jzyz1n2n_Monitor%20vitals3%20trassparent.png" 
               alt="BeanHealth Dashboard - Monitor vitals, message doctors, and manage chronic kidney disease" 
-              className="w-full h-auto object-cover"
+              className="w-full h-full object-cover"
               style={{ maxWidth: '100%', width: '100%' }}
             />
           </div>
