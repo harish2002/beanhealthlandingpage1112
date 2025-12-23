@@ -92,7 +92,7 @@ export const problemStats = [
   {
     id: 2,
     title: "Fluid Overload Ignored",
-    description: "Weight and BP trends buried in WhatsApp messages",
+    description: "Untracked weight and BP trends",
     icon: "Droplets"
   },
   {

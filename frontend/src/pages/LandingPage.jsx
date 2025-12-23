@@ -207,7 +207,6 @@ const LandingPage = () => {
         {/* Floating Background Shapes */}
         <div className="hero-shape hero-shape-1"></div>
         <div className="hero-shape hero-shape-2"></div>
-        <div className="hero-shape hero-shape-3"></div>
 
         <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{
@@ -289,18 +288,6 @@ const LandingPage = () => {
               animation: 'heroGlow 4s ease-in-out infinite alternate'
             }}></div>
 
-            {/* Floating Decorative Elements */}
-            <div style={{
-              position: 'absolute',
-              top: '-20px',
-              right: '10%',
-              width: '60px',
-              height: '60px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, var(--accent-wash) 0%, rgba(27, 67, 50, 0.2) 100%)',
-              animation: 'float 6s ease-in-out infinite',
-              zIndex: 2
-            }}></div>
             <div style={{
               position: 'absolute',
               bottom: '20%',
@@ -397,7 +384,7 @@ const LandingPage = () => {
                 <Droplets className="w-7 h-7" style={{ color: '#ef4444' }} />
               </div>
               <h3 className="product-card-title text-base mb-1">Fluid Overload</h3>
-              <p className="body-small" style={{ fontSize: '0.8rem' }}>Weight & BP buried in WhatsApp</p>
+              <p className="body-small" style={{ fontSize: '0.8rem' }}>Untracked BP and weight</p>
             </div>
 
             <div className="modern-card text-center stagger-item" style={{ padding: '1.5rem' }}>
