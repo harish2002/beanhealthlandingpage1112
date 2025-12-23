@@ -50,10 +50,7 @@ import {
   comparisonData,
   workflowSteps
 } from '../mock';
-import axios from 'axios';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import emailjs from '@emailjs/browser';
 
 // Scroll Animation Hook
 const useScrollAnimation = () => {
@@ -104,29 +101,43 @@ const LandingPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(`${API}/demo-request`, formData);
-      if (response.data.success) {
-        setIsSubmitted(true);
-        setFormData({ name: '', email: '', lookingFor: '' });
-        // Reset after 8 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 8000);
-      } else {
-        toast({
-          title: "Submission Failed",
-          description: "Please try again later.",
-          variant: "destructive"
-        });
+
+    const submittedData = { ...formData };
+
+    // EmailJS configuration from environment variables
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    // Show success message immediately for better UX
+    setIsSubmitted(true);
+    setFormData({ name: '', email: '', lookingFor: '' });
+
+    // Reset after 8 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+    }, 8000);
+
+    // Send email via EmailJS
+    if (serviceId && templateId && publicKey) {
+      try {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: submittedData.name,
+            from_email: submittedData.email,
+            message: submittedData.lookingFor,
+            to_name: 'BeanHealth Team',
+          },
+          publicKey
+        );
+        console.log('Email notification sent successfully');
+      } catch (error) {
+        console.error('Failed to send email notification:', error);
       }
-    } catch (error) {
-      console.error('Error submitting demo request:', error);
-      toast({
-        title: "Error",
-        description: "Failed to submit request. Please try again.",
-        variant: "destructive"
-      });
+    } else {
+      console.log('EmailJS not configured. Demo request:', submittedData);
     }
   };
 
@@ -2042,8 +2053,8 @@ const LandingPage = () => {
                   </div>
                   <div className="flex items-center justify-center gap-2 mt-2">
                     <Phone className="w-4 h-4" style={{ color: 'var(--accent-text)' }} />
-                    <a href="tel:+917558111310" className="link-text body-medium">
-                      +91 75581 11310
+                    <a href="tel:+917358657802" className="link-text body-medium">
+                      +91 73586 57802
                     </a>
                   </div>
                 </div>
@@ -2071,7 +2082,7 @@ const LandingPage = () => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
-                  <span className="body-small">+91 75581 11310</span>
+                  <span className="body-small">+91 73586 57802</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
