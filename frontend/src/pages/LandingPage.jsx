@@ -127,6 +127,8 @@ const LandingPage = () => {
           {
             from_name: submittedData.name,
             from_email: submittedData.email,
+            name: submittedData.name,
+            email: submittedData.email,
             message: submittedData.lookingFor,
             to_name: 'BeanHealth Team',
           },
@@ -218,6 +220,16 @@ const LandingPage = () => {
         {/* Floating Background Shapes */}
         <div className="hero-shape hero-shape-1"></div>
         <div className="hero-shape hero-shape-2"></div>
+        <div className="hero-shape hero-shape-3"></div>
+        <div className="hero-shape hero-shape-4"></div>
+
+        {/* Sparkle Particles */}
+        <div className="hero-sparkle sparkle-1"></div>
+        <div className="hero-sparkle sparkle-2"></div>
+        <div className="hero-sparkle sparkle-3"></div>
+        <div className="hero-sparkle sparkle-4"></div>
+        <div className="hero-sparkle sparkle-5"></div>
+        <div className="hero-sparkle sparkle-6"></div>
 
         <div className="hero-content" style={{ position: 'relative', zIndex: 1 }}>
           <div style={{
@@ -233,10 +245,10 @@ const LandingPage = () => {
             </span>
           </div>
           <h1 className="hero-title">
-            From Missed Follow-ups to<br />Real-Time Renal Risk Alerts
+            Turn CKD follow-up chaos into<br />a single clinical snapshot
           </h1>
-          <p className="hero-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            BeanHealth enables structured remote monitoring that helps <strong style={{ color: 'var(--accent-text)' }}>detect CKD deterioration 7–14 days earlier</strong>—reducing unplanned hospitalizations and giving nephrologists actionable patient intelligence.
+          <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            BeanHealth compresses fragmented medical data into a clinician-ready decision snapshot — highlighting deterioration, pending actions, and provenance so nephrologists can act faster with confidence and less manual review.
           </p>
           {/* Quantified Outcome Badge */}
           <div style={{
@@ -246,43 +258,55 @@ const LandingPage = () => {
             marginTop: '1.5rem',
             flexWrap: 'wrap'
           }}>
-            <div style={{
+            <div className="hero-badge-animated" style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
               padding: '10px 20px',
-              background: 'rgba(27, 67, 50, 0.08)',
-              borderRadius: '30px',
-              border: '1px solid rgba(27, 67, 50, 0.15)'
+              borderRadius: '30px'
             }}>
-              <CheckCircle2 className="w-5 h-5" style={{ color: 'var(--accent-text)' }} />
-              <span style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.9rem' }}>Reduce CKD emergencies by 40%</span>
+              <CheckCircle2 className="w-5 h-5" style={{ color: '#22c55e' }} />
+              <span style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.9rem' }}>Reduce clinical overload</span>
             </div>
-            <div style={{
+            <div className="hero-badge-animated" style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
               padding: '10px 20px',
-              background: 'rgba(27, 67, 50, 0.08)',
               borderRadius: '30px',
-              border: '1px solid rgba(27, 67, 50, 0.15)'
+              animationDelay: '0.5s'
             }}>
-              <Bell className="w-5 h-5" style={{ color: 'var(--accent-text)' }} />
-              <span style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.9rem' }}>Early warning alerts in real-time</span>
+              <Bell className="w-5 h-5" style={{ color: '#3b82f6' }} />
+              <span style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '0.9rem' }}>Rapid risk flags</span>
             </div>
           </div>
+          {/* Provenance Disclaimer */}
+          <div style={{
+            marginTop: '1.5rem',
+            padding: '1rem 1.5rem',
+            background: 'rgba(27, 67, 50, 0.05)',
+            borderRadius: '12px',
+            border: '1px solid rgba(27, 67, 50, 0.1)',
+            maxWidth: '800px',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.6', textAlign: 'center' }}>
+              <strong style={{ color: 'var(--text-primary)' }}>Provenance & disclaimer:</strong> BeanHealth extracts decision-relevant facts from clinical records and surfaces explainable, rule-based risk flags. This snapshot is a clinician decision-support tool and does not replace the full medical record or clinical judgement. Always review source documentation before making treatment changes.
+            </p>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-            <Button onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })} className="btn-primary" style={{
+            <Button onClick={scrollToDemo} className="btn-primary" style={{
               boxShadow: '0 4px 20px rgba(27, 67, 50, 0.3)',
               fontSize: '1rem',
               padding: '16px 32px'
             }}>
-              See CKD Workflow <ArrowRight className="ml-2 w-5 h-5" />
+              Schedule Clinical Demo <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
-            <Button onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="btn-secondary" style={{
+            <Button onClick={() => document.getElementById('solution')?.scrollIntoView({ behavior: 'smooth' })} className="btn-secondary" style={{
               background: 'white',
               boxShadow: '0 2px 10px rgba(0, 0, 0, 0.08)'
-            }}>How Alerts Work</Button>
+            }}>See How It Works</Button>
           </div>
           <div className="mt-12" style={{ position: 'relative', perspective: '1000px' }}>
             {/* Animated Glow Background */}
@@ -354,16 +378,15 @@ const LandingPage = () => {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className="text-center mb-12 scroll-fade-up">
             <h2 className="heading-2 section-header-modern section-header-center" style={{ display: 'inline-block' }}>
-              CKD Care Isn't Broken by Science<br />
-              It's Broken by Fragmentation
+              Clinician workflow is broken —<br />not clinical knowledge
             </h2>
           </div>
           <p className="body-large text-center mb-12 scroll-fade-up" style={{ color: 'var(--text-secondary)', maxWidth: '900px', margin: '0 auto 3rem' }}>
-            Between clinic visits, <strong style={{ color: 'var(--accent-text)' }}>eGFR trends go untracked</strong>, fluid overload builds silently, and post-transplant critical windows pass without structured monitoring.
+            Labs, discharge summaries, vitals and messages are scattered across systems. Clinicians spend minutes reconstructing context before each decision — that slow, manual work causes missed deterioration, delayed interventions, and emergency admissions.
           </p>
 
           {/* Problem Flow - Icon-based for scannability */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 scroll-fade-up">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 scroll-fade-up">
             <div className="modern-card text-center stagger-item" style={{ padding: '1.5rem' }}>
               <div style={{
                 width: '56px',
@@ -377,8 +400,8 @@ const LandingPage = () => {
               }}>
                 <TrendingDown className="w-7 h-7" style={{ color: '#ef4444' }} />
               </div>
-              <h3 className="product-card-title text-base mb-1">eGFR Decline</h3>
-              <p className="body-small" style={{ fontSize: '0.8rem' }}>Gradual loss missed between visits</p>
+              <h3 className="product-card-title text-base mb-2">Untracked deterioration between visits</h3>
+              <p className="body-small" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>Gradual declines and critical trends are missed when data is fragmented.</p>
             </div>
 
             <div className="modern-card text-center stagger-item" style={{ padding: '1.5rem' }}>
@@ -392,27 +415,10 @@ const LandingPage = () => {
                 justifyContent: 'center',
                 margin: '0 auto 1rem'
               }}>
-                <Droplets className="w-7 h-7" style={{ color: '#ef4444' }} />
+                <FileText className="w-7 h-7" style={{ color: '#ef4444' }} />
               </div>
-              <h3 className="product-card-title text-base mb-1">Fluid Overload</h3>
-              <p className="body-small" style={{ fontSize: '0.8rem' }}>Untracked BP and weight</p>
-            </div>
-
-            <div className="modern-card text-center stagger-item" style={{ padding: '1.5rem' }}>
-              <div style={{
-                width: '56px',
-                height: '56px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.15) 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 1rem'
-              }}>
-                <Calendar className="w-7 h-7" style={{ color: '#ef4444' }} />
-              </div>
-              <h3 className="product-card-title text-base mb-1">Post-Transplant Gaps</h3>
-              <p className="body-small" style={{ fontSize: '0.8rem' }}>Critical 90-day windows unmonitored</p>
+              <h3 className="product-card-title text-base mb-2">Manual reconstruction of patient history</h3>
+              <p className="body-small" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>Clinicians spend time collating lab results, discharge notes, and messages instead of deciding.</p>
             </div>
 
             <div className="modern-card text-center stagger-item" style={{ padding: '1.5rem' }}>
@@ -428,8 +434,8 @@ const LandingPage = () => {
               }}>
                 <AlertTriangle className="w-7 h-7" style={{ color: '#ef4444' }} />
               </div>
-              <h3 className="product-card-title text-base mb-1">Emergency Admission</h3>
-              <p className="body-small" style={{ fontSize: '0.8rem' }}>Preventable crisis from missed signs</p>
+              <h3 className="product-card-title text-base mb-2">Reactive emergency-driven care</h3>
+              <p className="body-small" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>Missed follow-ups and delayed actions lead to avoidable hospital admissions.</p>
             </div>
           </div>
 
@@ -499,7 +505,7 @@ const LandingPage = () => {
         <div className="container">
           <div className="text-center mb-12 scroll-fade-up">
             <h2 className="heading-2 section-header-modern section-header-center" style={{ display: 'inline-block' }}>
-              The Gap in Existing Telemedicine
+              The Gap in Existing EMR & Telemedicine
             </h2>
           </div>
           <div className="comparison-modern max-w-3xl mx-auto scroll-scale">
@@ -512,8 +518,8 @@ const LandingPage = () => {
               fontWeight: '600',
               fontFamily: 'Poppins, system-ui, sans-serif'
             }}>
-              <div style={{ padding: '1rem 1.25rem' }}>Feature</div>
-              <div style={{ padding: '1rem 1.25rem', textAlign: 'center' }}>Telemedicine</div>
+              <div style={{ padding: '1rem 1.25rem' }}>Capability</div>
+              <div style={{ padding: '1rem 0.5rem', textAlign: 'center', fontSize: '0.85rem' }}>Traditional EMR / Telemedicine</div>
               <div style={{ padding: '1rem 1.25rem', textAlign: 'center' }}>BeanHealth</div>
             </div>
             {/* Rows */}
@@ -578,25 +584,36 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* Product Pillars */}
+      {/* How We Fix It - Solution Summary */}
+      <section className="section-container" style={{ background: 'linear-gradient(135deg, var(--bg-section) 0%, rgba(27, 67, 50, 0.05) 100%)', paddingBottom: '2rem' }}>
+        <div className="container">
+          <div className="text-center scroll-fade-up">
+            <h2 className="heading-2 section-header-modern section-header-center" style={{ display: 'inline-block' }}>
+              How we fix it
+            </h2>
+            <p className="body-large mt-6" style={{ color: 'var(--text-secondary)', maxWidth: '900px', margin: '1.5rem auto 0' }}>
+              BeanHealth converts unstructured records into an explainable clinical snapshot with rule-based risk flags, source provenance, and actionable next steps — enabling faster triage and auditable decisions.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Platform Components */}
       <section id="solution" className="section-container">
         <div className="container">
           <div className="text-center mb-12 scroll-fade-up">
             <h2 className="heading-2 section-header-modern section-header-center" style={{ display: 'inline-block' }}>
-              BeanHealth – The Complete CKD Workflow Platform
+              Core platform components
             </h2>
-            <p className="body-large mt-6" style={{ color: 'var(--text-secondary)', maxWidth: '700px', margin: '1.5rem auto 0' }}>
-              Three interconnected modules designed for complete renal care management
-            </p>
           </div>
           <div className="ai-grid">
             <div className="modern-card scroll-slide-left" style={{ padding: '2rem' }}>
               <div className="icon-badge">
-                <Activity className="w-7 h-7" style={{ color: 'var(--accent-text)' }} />
+                <BarChart3 className="w-7 h-7" style={{ color: 'var(--accent-text)' }} />
               </div>
-              <h3 className="heading-3 mb-4">Patient App</h3>
+              <h3 className="heading-3 mb-4">Clinician Intelligence Console</h3>
               <ul className="space-y-3">
-                {['Daily vitals logging (BP, weight, urine output)', 'Symptoms & lifestyle inputs', 'Medication compliance tracker', 'Instant risk reclassification', 'Integrated kit support (BP monitor, scales)'].map((item, i) => (
+                {['Single-screen clinical snapshot (CKD stage, risk tier, abnormal trends)', 'Actionable next step cues and provenance excerpts'].map((item, i) => (
                   <li key={i} className="feature-item" style={{ padding: '0.5rem 0' }}>
                     <div className="feature-icon">
                       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -609,11 +626,11 @@ const LandingPage = () => {
 
             <div className="modern-card scroll-fade-up" style={{ padding: '2rem' }}>
               <div className="icon-badge">
-                <BarChart3 className="w-7 h-7" style={{ color: 'var(--accent-text)' }} />
+                <FileText className="w-7 h-7" style={{ color: 'var(--accent-text)' }} />
               </div>
-              <h3 className="heading-3 mb-4">Nephrologist Intelligence Dashboard</h3>
+              <h3 className="heading-3 mb-4">Extraction & Provenance Engine</h3>
               <ul className="space-y-3">
-                {['Clinical classification engine', 'Report timeline + vitals graph', 'Auto-flagged red/amber cases', 'Follow-up recommendations', 'One-glance triage view with EMR export'].map((item, i) => (
+                {['Convert discharge summaries, labs, and notes into structured facts', 'Store source text excerpt + page + timestamp for each extracted field'].map((item, i) => (
                   <li key={i} className="feature-item" style={{ padding: '0.5rem 0' }}>
                     <div className="feature-icon">
                       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -628,9 +645,9 @@ const LandingPage = () => {
               <div className="icon-badge">
                 <ClipboardList className="w-7 h-7" style={{ color: 'var(--accent-text)' }} />
               </div>
-              <h3 className="heading-3 mb-4">Coordinator Workflow System</h3>
+              <h3 className="heading-3 mb-4">Workflow Orchestration & Audit</h3>
               <ul className="space-y-3">
-                {['Follow-up calendar for CKD, dialysis & transplant', 'Pre-built care routines', 'Auto reminders based on post-transplant days', 'Visit preparation checklist', 'Patient-document organiser & communication log'].map((item, i) => (
+                {['Follow-up tracking, pending labs, and acknowledgement/resolve flows', 'Full audit trail for medico-legal accountability'].map((item, i) => (
                   <li key={i} className="feature-item" style={{ padding: '0.5rem 0' }}>
                     <div className="feature-icon">
                       <CheckCircle2 className="w-3.5 h-3.5" />
@@ -768,77 +785,30 @@ const LandingPage = () => {
             <h2 className="heading-2 section-header-modern section-header-center" style={{ display: 'inline-block' }}>
               Complete Feature Set
             </h2>
-            <p className="body-large mt-4" style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '1rem auto 0' }}>
-              Features organized by who uses them — tagged by deployment phase
-            </p>
-          </div>
-
-          {/* Patient-Facing Features */}
-          <div className="mb-10 scroll-fade-up">
-            <div className="flex items-center gap-3 mb-5">
+            {/* Clinician-first badge */}
+            <div style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '1.5rem'
+            }}>
               <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '20px',
-                background: 'linear-gradient(135deg, #ef4444 0%, #f97316 100%)',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                gap: '0.5rem',
+                padding: '10px 20px',
+                background: 'linear-gradient(135deg, var(--accent-wash) 0%, rgba(27, 67, 50, 0.12) 100%)',
+                borderRadius: '30px',
+                border: '1px solid rgba(27, 67, 50, 0.2)'
               }}>
-                <Heart className="w-5 h-5" style={{ color: 'white' }} />
-              </div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-primary)' }}>Patient-Facing</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'var(--accent-wash)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: 'var(--accent-text)'
-                }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Daily Vitals Logging</h4>
-                <p className="product-card-description">BP, weight, urine output with trend insights</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'var(--accent-wash)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: 'var(--accent-text)'
-                }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Medication Adherence</h4>
-                <p className="product-card-description">Reminders and compliance tracking</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'rgba(99, 102, 241, 0.1)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: '#6366f1'
-                }}>Phase 2</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Device Kit Integration</h4>
-                <p className="product-card-description">BP monitors & weighing scales auto-sync</p>
+                <Stethoscope className="w-4 h-4" style={{ color: 'var(--accent-text)' }} />
+                <span style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--accent-text)' }}>
+                  Clinician-first: focused on reducing chart review time and missed deterioration.
+                </span>
               </div>
             </div>
           </div>
 
-          {/* Clinician-Facing Features */}
+          {/* Clinician-Facing Features - FIRST */}
           <div className="mb-10 scroll-fade-up">
             <div className="flex items-center gap-3 mb-5">
               <div style={{
@@ -852,7 +822,7 @@ const LandingPage = () => {
               }}>
                 <Stethoscope className="w-5 h-5" style={{ color: 'white' }} />
               </div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-primary)' }}>Clinician-Facing</h3>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-primary)' }}>Clinician-facing</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="diff-card stagger-item" style={{ position: 'relative' }}>
@@ -867,8 +837,8 @@ const LandingPage = () => {
                   fontWeight: '600',
                   color: 'var(--accent-text)'
                 }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Smart CKD Staging</h4>
-                <p className="product-card-description">AI-powered classification based on clinical guidelines</p>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Explainable risk flags & CKD staging</h4>
+                <p className="product-card-description">Rule-based risk classification with clear reasoning</p>
               </div>
               <div className="diff-card stagger-item" style={{ position: 'relative' }}>
                 <span style={{
@@ -882,8 +852,8 @@ const LandingPage = () => {
                   fontWeight: '600',
                   color: 'var(--accent-text)'
                 }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Red-Flag Alerts</h4>
-                <p className="product-card-description">Instant notifications for critical changes</p>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Document timeline & one-click source excerpts</h4>
+                <p className="product-card-description">Organised view of labs, reports with provenance links</p>
               </div>
               <div className="diff-card stagger-item" style={{ position: 'relative' }}>
                 <span style={{
@@ -897,10 +867,73 @@ const LandingPage = () => {
                   fontWeight: '600',
                   color: 'var(--accent-text)'
                 }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Document Timeline</h4>
-                <p className="product-card-description">Organized view of labs, reports & notes</p>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Follow-up & pending lab tracker</h4>
+                <p className="product-card-description">Track overdue labs and scheduled follow-ups</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Coordinator / Ops Features */}
+          <div className="mb-10 scroll-fade-up">
+            <div className="flex items-center gap-3 mb-5">
+              <div style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '10px',
+                background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Building2 className="w-5 h-5" style={{ color: 'white' }} />
+              </div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-primary)' }}>Coordinator / Ops</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Task orchestration & visit preparation checklist</h4>
+                <p className="product-card-description">Follow-up calendars, reminders, and pre-visit checklists</p>
               </div>
               <div className="diff-card stagger-item" style={{ position: 'relative' }}>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Audit trail & documentation export</h4>
+                <p className="product-card-description">Complete action history with timestamped logs</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Patient (supporting) Features */}
+          <div className="mb-10 scroll-fade-up">
+            <div className="flex items-center gap-3 mb-5">
+              <div style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '20px',
+                background: 'linear-gradient(135deg, #94a3b8 0%, #64748b 100%)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <Heart className="w-5 h-5" style={{ color: 'white' }} />
+              </div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-secondary)' }}>Patient (supporting)</h3>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="diff-card stagger-item" style={{ position: 'relative', opacity: 0.85 }}>
+                <span style={{
+                  position: 'absolute',
+                  top: '12px',
+                  right: '12px',
+                  padding: '3px 10px',
+                  background: 'var(--accent-wash)',
+                  borderRadius: '12px',
+                  fontSize: '0.7rem',
+                  fontWeight: '600',
+                  color: 'var(--accent-text)'
+                }}>MVP</span>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Daily vitals logging & adherence reminders</h4>
+                <p className="product-card-description">Secondary to clinician value — supports data collection</p>
+              </div>
+              <div className="diff-card stagger-item" style={{ position: 'relative', opacity: 0.85 }}>
                 <span style={{
                   position: 'absolute',
                   top: '12px',
@@ -912,38 +945,8 @@ const LandingPage = () => {
                   fontWeight: '600',
                   color: '#6366f1'
                 }}>Phase 2</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Transplant Follow-Up Engine</h4>
-                <p className="product-card-description">Post-transplant day-specific protocols</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'rgba(99, 102, 241, 0.1)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: '#6366f1'
-                }}>Phase 2</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Dialysis Monitoring</h4>
-                <p className="product-card-description">Track sessions and complications</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'var(--accent-wash)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: 'var(--accent-text)'
-                }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Daily Vitals Analytics</h4>
-                <p className="product-card-description">BP, weight & trends visualization</p>
+                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Device kit integration</h4>
+                <p className="product-card-description">BP monitors & weighing scales auto-sync</p>
               </div>
             </div>
           </div>
@@ -1141,70 +1144,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Hospital Ops Features */}
-          <div className="mb-10 scroll-fade-up">
-            <div className="flex items-center gap-3 mb-5">
-              <div style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '10px',
-                background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <Building2 className="w-5 h-5" style={{ color: 'white' }} />
-              </div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: '600', color: 'var(--text-primary)' }}>Hospital Operations</h3>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'var(--accent-wash)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: 'var(--accent-text)'
-                }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Coordinator Workflow</h4>
-                <p className="product-card-description">Follow-up calendars & task automation</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'var(--accent-wash)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: 'var(--accent-text)'
-                }}>MVP</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>Triage Automation</h4>
-                <p className="product-card-description">Auto-prioritize patient cases by risk</p>
-              </div>
-              <div className="diff-card stagger-item" style={{ position: 'relative' }}>
-                <span style={{
-                  position: 'absolute',
-                  top: '12px',
-                  right: '12px',
-                  padding: '3px 10px',
-                  background: 'rgba(99, 102, 241, 0.1)',
-                  borderRadius: '12px',
-                  fontSize: '0.7rem',
-                  fontWeight: '600',
-                  color: '#6366f1'
-                }}>Phase 2</span>
-                <h4 className="product-card-title" style={{ marginBottom: '0.5rem' }}>EMR Export</h4>
-                <p className="product-card-description">Seamless integration with hospital systems</p>
-              </div>
-            </div>
-          </div>
+
 
           {/* Compliance & Security Section */}
           <div className="scroll-fade-up" style={{ marginTop: '2rem' }}>
@@ -1746,7 +1686,7 @@ const LandingPage = () => {
                   maxWidth: '280px',
                   marginBottom: '1rem'
                 }}>
-                  Developing mobile applications and device integrations for real-time health monitoring.
+                  Developing mobile applications and device integrations for rapid health monitoring.
                 </p>
 
                 {/* Tech Stack Tags */}
@@ -1795,35 +1735,6 @@ const LandingPage = () => {
             <Card className="product-card">
               <CardHeader>
                 <div className="icon-wrapper mb-4">
-                  <Heart className="w-8 h-8" style={{ color: 'var(--accent-text)' }} />
-                </div>
-                <CardTitle className="heading-3">For Patients</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Clear guidance on daily health management</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Fewer flare-ups and emergency visits</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Peace of mind through early alerts</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Organised reports and medication tracking</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="product-card">
-              <CardHeader>
-                <div className="icon-wrapper mb-4">
                   <Hospital className="w-8 h-8" style={{ color: 'var(--accent-text)' }} />
                 </div>
                 <CardTitle className="heading-3">For Hospitals & Nephrologists</CardTitle>
@@ -1836,15 +1747,40 @@ const LandingPage = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Faster patient triaging and prioritisation</span>
+                    <span className="body-medium">Faster patient triage and prioritisation</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Higher patient retention and revenue continuity</span>
+                    <span className="body-medium">Reduced clinician chart-review time</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
-                    <span className="body-medium">Less manual coordinator workload with clear documentation</span>
+                    <span className="body-medium">Audit trail for follow-up accountability</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="product-card">
+              <CardHeader>
+                <div className="icon-wrapper mb-4">
+                  <Heart className="w-8 h-8" style={{ color: 'var(--accent-text)' }} />
+                </div>
+                <CardTitle className="heading-3">For Patients</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
+                    <span className="body-medium">Clear daily guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
+                    <span className="body-medium">Fewer emergency visits</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle2 className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: 'var(--accent-text)' }} />
+                    <span className="body-medium">Organised reports & meds</span>
                   </li>
                 </ul>
               </CardContent>
@@ -1861,9 +1797,9 @@ const LandingPage = () => {
             <Card className="product-card">
               <CardHeader>
                 <Stethoscope className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">Clinically Validated</CardTitle>
+                <CardTitle className="product-card-title">Clinically validated</CardTitle>
                 <CardDescription className="product-card-description">
-                  Built with direct input from nephrologists and transplant coordinators
+                  Built from direct input of nephrologists and coordinators.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1871,39 +1807,39 @@ const LandingPage = () => {
             <Card className="product-card">
               <CardHeader>
                 <ShieldCheck className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">CKD-Specific Platform</CardTitle>
+                <CardTitle className="product-card-title">CKD-specific platform</CardTitle>
                 <CardDescription className="product-card-description">
-                  Designed specifically for chronic kidney disease, not generic telemedicine
+                  Designed for kidney workflows, not generic telemedicine.
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="product-card">
               <CardHeader>
-                <Users className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">Closed-Loop System</CardTitle>
+                <Cpu className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
+                <CardTitle className="product-card-title">Explainable rule engine</CardTitle>
                 <CardDescription className="product-card-description">
-                  Seamless connection between Patient → Coordinator → Nephrologist
+                  Deterministic, guideline-based risk logic (configurable).
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="product-card">
               <CardHeader>
-                <Bell className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">Proactive Care Model</CardTitle>
+                <FileText className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
+                <CardTitle className="product-card-title">Provenance & excerpts</CardTitle>
                 <CardDescription className="product-card-description">
-                  Early intervention instead of reactive consultations
+                  One-click source links to original report text.
                 </CardDescription>
               </CardHeader>
             </Card>
 
             <Card className="product-card">
               <CardHeader>
-                <Activity className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">Device Integration</CardTitle>
+                <ClipboardList className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
+                <CardTitle className="product-card-title">Workflow & accountability</CardTitle>
                 <CardDescription className="product-card-description">
-                  Seamless integration with medical devices for home monitoring
+                  Acknowledge / Resolve actions with timestamped audit trail.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1911,9 +1847,9 @@ const LandingPage = () => {
             <Card className="product-card">
               <CardHeader>
                 <LineChart className="w-8 h-8 mb-4" style={{ color: 'var(--accent-text)' }} />
-                <CardTitle className="product-card-title">Scalable & Affordable</CardTitle>
+                <CardTitle className="product-card-title">Scalable & practical</CardTitle>
                 <CardDescription className="product-card-description">
-                  Designed for Indian markets with global scalability
+                  Built for Indian hospitals with enterprise-grade deployment options.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1930,7 +1866,7 @@ const LandingPage = () => {
               <CardHeader>
                 <CardTitle className="product-card-title">Hospital Subscription</CardTitle>
                 <CardDescription className="product-card-description">
-                  Department-wide implementation with full feature access
+                  Department-wide deployment with full feature access.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1939,7 +1875,7 @@ const LandingPage = () => {
               <CardHeader>
                 <CardTitle className="product-card-title">Per-Patient Activation</CardTitle>
                 <CardDescription className="product-card-description">
-                  Flexible pricing based on active patient count
+                  Flexible pricing by active monitored patient.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1948,7 +1884,7 @@ const LandingPage = () => {
               <CardHeader>
                 <CardTitle className="product-card-title">Enterprise Licensing</CardTitle>
                 <CardDescription className="product-card-description">
-                  Multi-location hospital chains with custom integrations
+                  Multi-location hospital chains, custom integrations.
                 </CardDescription>
               </CardHeader>
             </Card>
@@ -1957,11 +1893,14 @@ const LandingPage = () => {
               <CardHeader>
                 <CardTitle className="product-card-title">Device Kits Add-on</CardTitle>
                 <CardDescription className="product-card-description">
-                  Optional medical device bundles for home monitoring
+                  Optional home-monitoring bundles (Phase 2).
                 </CardDescription>
               </CardHeader>
             </Card>
           </div>
+          <p className="text-center mt-8" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+            BeanHealth is sold to hospitals and nephrology practices as clinical workflow infrastructure, not a consumer health app.
+          </p>
         </div>
       </section>
 

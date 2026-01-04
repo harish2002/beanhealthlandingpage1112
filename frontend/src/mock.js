@@ -18,7 +18,7 @@ export const testimonials = [
     id: 1,
     name: "Dr. Rajesh Kumar",
     role: "Senior Nephrologist, Apollo Hospitals",
-    quote: "BeanHealth has transformed how we monitor our CKD patients. The real-time classification and alert system helps us intervene early, reducing emergency admissions by 40%."
+    quote: "BeanHealth has transformed how we monitor our CKD patients. The rule-based classification and risk flag system helps us intervene early, reducing emergency admissions by 40%."
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const testimonials = [
     id: 3,
     name: "Ramesh Patel",
     role: "CKD Stage 3 Patient",
-    quote: "I feel more in control of my health now. Daily vitals tracking and instant feedback gives me peace of mind, and my doctor can see everything in real-time."
+    quote: "I feel more in control of my health now. Daily vitals tracking and instant feedback gives me peace of mind, and my doctor can see everything when needed."
   }
 ];
 
@@ -38,7 +38,7 @@ export const features = [
   {
     id: 1,
     title: "Smart CKD Staging & Classification",
-    description: "AI-powered classification engine based on clinical guidelines and real-time patient data"
+    description: "Rule-based classification engine based on clinical guidelines and rapid patient data analysis"
   },
   {
     id: 2,
@@ -129,38 +129,38 @@ export const fragmentationIssues = [
 
 export const comparisonData = [
   {
-    feature: "Video Consultation",
+    feature: "Data aggregation (labs + discharge + meds)",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Source provenance & excerpt",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Explainable decision snapshot",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Configurable clinical rules",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Audit trail for follow-up decisions",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Actionable next-step cues",
+    telemedicine: false,
+    beanhealth: true
+  },
+  {
+    feature: "Patient video consult",
     telemedicine: true,
-    beanhealth: true
-  },
-  {
-    feature: "Clinical Workflow",
-    telemedicine: false,
-    beanhealth: true
-  },
-  {
-    feature: "Real-time Risk Scoring",
-    telemedicine: false,
-    beanhealth: true
-  },
-  {
-    feature: "Adherence Tracking",
-    telemedicine: false,
-    beanhealth: true
-  },
-  {
-    feature: "Coordinator Module",
-    telemedicine: false,
-    beanhealth: true
-  },
-  {
-    feature: "Triage Automation",
-    telemedicine: false,
-    beanhealth: true
-  },
-  {
-    feature: "CKD-Specific Intelligence",
-    telemedicine: false,
     beanhealth: true
   }
 ];
@@ -168,37 +168,32 @@ export const comparisonData = [
 export const workflowSteps = [
   {
     id: 1,
-    title: "Baseline Assessment",
-    description: "Patient baseline including labs, eGFR, comorbidities → classification"
+    title: "Data ingestion",
+    description: "Labs, discharge summaries, medication lists, and vitals."
   },
   {
     id: 2,
-    title: "Daily Monitoring",
-    description: "Patient logs vitals → app generates micro-analytics"
+    title: "Structured extraction",
+    description: "Convert reports into structured clinical fields with source excerpts."
   },
   {
     id: 3,
-    title: "Risk Classification Engine",
-    description: "Real-time model updates risk score (green/amber/red)"
+    title: "Rule-based logic",
+    description: "Deterministic CKD rules (guideline-driven) evaluate risk and pending actions."
   },
   {
     id: 4,
-    title: "Alert Routing",
-    description: "Red → nephrologist, Amber → coordinator, Green → patient self-management"
+    title: "Snapshot generation",
+    description: "One-page decision snapshot with reason and provenance."
   },
   {
     id: 5,
-    title: "Follow-Up Routines",
-    description: "CKD or transplant-specific routines with automated reminders"
+    title: "Clinician triage",
+    description: "Auto-flagged cases for review with suggested next action."
   },
   {
     id: 6,
-    title: "Clinician Action",
-    description: "Doctor reviews dashboard, identifies cases, updates plan"
-  },
-  {
-    id: 7,
-    title: "Outcome Improvement",
-    description: "Fewer emergencies, structured workflow, higher retention"
+    title: "Audit & follow-up",
+    description: "Acknowledge/resolve actions, trigger re-evaluation, store audit logs."
   }
 ];

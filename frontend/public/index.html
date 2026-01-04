@@ -1,32 +1,235 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="BeanHealth - Continuous Kidney Care. Smarter Decisions. Better Outcomes. A comprehensive CKD clinical workflow platform for hospitals and nephrologists." />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-        <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-        <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-        <title>Continuous, connected, Complete kidney care.</title>
-    </head>
-    <body>
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <!--
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1B4332" />
+    <meta name="description"
+        content="BeanHealth converts fragmented clinical records into explainable clinical snapshots for nephrologists — reducing chart review time, surfacing risk flags, and improving follow-up accountability." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beanhealth.in/" />
+    <meta property="og:title" content="BeanHealth — Clinical Intelligence for CKD Care" />
+    <meta property="og:description"
+        content="BeanHealth converts fragmented clinical records into explainable clinical snapshots for nephrologists — reducing chart review time, surfacing risk flags, and improving follow-up accountability." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="BeanHealth" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://beanhealth.in/" />
+    <meta name="twitter:title" content="BeanHealth — Clinical Intelligence for CKD Care" />
+    <meta name="twitter:description"
+        content="BeanHealth converts fragmented clinical records into explainable clinical snapshots for nephrologists — reducing chart review time and surfacing risk flags." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/og-image.png" />
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="BeanHealth" />
+    <meta name="keywords"
+        content="CKD, chronic kidney disease, nephrology, kidney care, patient monitoring, hospital software, nephrologist dashboard, remote patient monitoring, renal care" />
+    <link rel="canonical" href="https://beanhealth.in/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "BeanHealth",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web",
+            "description": "A comprehensive CKD clinical workflow platform for hospitals and nephrologists. Enables structured remote monitoring to detect CKD deterioration 7-14 days earlier.",
+            "offers": {
+                "@type": "Offer",
+                "availability": "https://schema.org/InStock"
+            },
+            "provider": {
+                "@type": "Organization",
+                "name": "BeanHealth",
+                "url": "https://beanhealth.in"
+            }
+        }
+        </script>
+
+    <title>BeanHealth — Clinical Intelligence for CKD Care</title>
+</head>
+
+<body>
+    <noscript>
+        <style>
+            .noscript-container {
+                font-family: 'Open Sans', Arial, sans-serif;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 40px 20px;
+                color: #333;
+                line-height: 1.6;
+            }
+
+            .noscript-header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .noscript-logo {
+                max-width: 200px;
+                margin-bottom: 20px;
+            }
+
+            .noscript-title {
+                font-family: 'Poppins', Arial, sans-serif;
+                font-size: 2rem;
+                color: #1B4332;
+                margin-bottom: 10px;
+            }
+
+            .noscript-subtitle {
+                font-size: 1.1rem;
+                color: #666;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .noscript-section {
+                margin-bottom: 30px;
+            }
+
+            .noscript-section h2 {
+                font-family: 'Poppins', Arial, sans-serif;
+                color: #1B4332;
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+
+            .noscript-features {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .noscript-feature {
+                flex: 1;
+                min-width: 250px;
+                background: #f8faf9;
+                padding: 20px;
+                border-radius: 8px;
+                border-left: 3px solid #1B4332;
+            }
+
+            .noscript-feature h3 {
+                color: #1B4332;
+                font-size: 1rem;
+                margin-bottom: 8px;
+            }
+
+            .noscript-feature p {
+                font-size: 0.9rem;
+                color: #666;
+                margin: 0;
+            }
+
+            .noscript-stats {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                margin: 30px 0;
+            }
+
+            .noscript-stat {
+                text-align: center;
+                padding: 15px 25px;
+                background: #1B4332;
+                color: white;
+                border-radius: 8px;
+            }
+
+            .noscript-stat strong {
+                display: block;
+                font-size: 1.5rem;
+            }
+
+            .noscript-contact {
+                background: #f0f7f4;
+                padding: 30px;
+                border-radius: 12px;
+                text-align: center;
+            }
+
+            .noscript-contact a {
+                color: #1B4332;
+                font-weight: 600;
+            }
+
+            .noscript-footer {
+                margin-top: 40px;
+                padding-top: 20px;
+                border-top: 1px solid #eee;
+                text-align: center;
+                font-size: 0.85rem;
+                color: #999;
+            }
+        </style>
+        <div class="noscript-container">
+            <header class="noscript-header">
+                <img src="/beanhealth-logo.png" alt="BeanHealth Logo" class="noscript-logo" />
+                <h1 class="noscript-title">From Missed Follow-ups to Real-Time Renal Risk Alerts</h1>
+                <p class="noscript-subtitle">BeanHealth enables structured remote monitoring that helps detect CKD
+                    deterioration 7–14 days earlier—reducing unplanned hospitalizations and giving nephrologists
+                    actionable patient intelligence.</p>
+            </header>
+
+            <div class="noscript-stats">
+                <div class="noscript-stat"><strong>40%</strong> Reduction in CKD emergencies</div>
+                <div class="noscript-stat"><strong>7-14 days</strong> Earlier detection</div>
+                <div class="noscript-stat"><strong>Real-time</strong> Early warning alerts</div>
+            </div>
+
+            <section class="noscript-section">
+                <h2>The Complete CKD Workflow Platform</h2>
+                <div class="noscript-features">
+                    <div class="noscript-feature">
+                        <h3>Patient App</h3>
+                        <p>Daily vitals logging, medication compliance tracking, symptom inputs, and instant risk
+                            reclassification.</p>
+                    </div>
+                    <div class="noscript-feature">
+                        <h3>Nephrologist Dashboard</h3>
+                        <p>Clinical classification engine, auto-flagged red/amber cases, vitals graphs, and one-glance
+                            triage view.</p>
+                    </div>
+                    <div class="noscript-feature">
+                        <h3>Coordinator System</h3>
+                        <p>Follow-up calendar, pre-built care routines, auto reminders, and patient-document organizer.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="noscript-contact">
+                <h2>Schedule a Demo</h2>
+                <p>Ready to transform your CKD care workflow?</p>
+                <p>Contact us at <a href="mailto:hello@beanhealth.in">hello@beanhealth.in</a></p>
+            </section>
+
+            <footer class="noscript-footer">
+                <p>&copy; 2024 BeanHealth. Continuous, Connected, Complete Kidney Care.</p>
+                <p>Based on KDIGO Guidelines • Nephrologist-Reviewed Protocols</p>
+            </footer>
+        </div>
+    </noscript>
+    <div id="root"></div>
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -36,11 +239,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-        <script>
-            !(function (t, e) {
-                var o, n, p, r;
-                e.__SV ||
-                    ((window.posthog = e),
+    <script>
+        !(function (t, e) {
+            var o, n, p, r;
+            e.__SV ||
+                ((window.posthog = e),
                     (e._i = []),
                     (e.init = function (i, s, a) {
                         function g(t, e) {
@@ -73,23 +276,23 @@
                         var u = e;
                         for (
                             void 0 !== a ? (u = e[a] = []) : (a = "posthog"),
-                                u.people = u.people || [],
-                                u.toString = function (t) {
-                                    var e = "posthog";
-                                    return (
-                                        "posthog" !== a && (e += "." + a),
-                                        t || (e += " (stub)"),
-                                        e
-                                    );
-                                },
-                                u.people.toString = function () {
-                                    return u.toString(1) + ".people (stub)";
-                                },
-                                o =
-                                    "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
-                                        " ",
-                                    ),
-                                n = 0;
+                            u.people = u.people || [],
+                            u.toString = function (t) {
+                                var e = "posthog";
+                                return (
+                                    "posthog" !== a && (e += "." + a),
+                                    t || (e += " (stub)"),
+                                    e
+                                );
+                            },
+                            u.people.toString = function () {
+                                return u.toString(1) + ".people (stub)";
+                            },
+                            o =
+                            "init me ws ys ps bs capture je Di ks register register_once register_for_session unregister unregister_for_session Ps getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Es $s createPersonProfile Is opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing Ss debug xs getPageViewId captureTraceFeedback captureTraceMetric".split(
+                                " ",
+                            ),
+                            n = 0;
                             n < o.length;
                             n++
                         )
@@ -97,11 +300,12 @@
                         e._i.push([i, s, a]);
                     }),
                     (e.__SV = 1));
-            })(document, window.posthog || []);
-            posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
-                api_host: "https://us.i.posthog.com",
-                person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
-            });
-        </script>
-    </body>
+        })(document, window.posthog || []);
+        posthog.init("phc_yJW1VjHGGwmCbbrtczfqqNxgBDbhlhOWcdzcIJEOTFE", {
+            api_host: "https://us.i.posthog.com",
+            person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
+        });
+    </script>
+</body>
+
 </html>
